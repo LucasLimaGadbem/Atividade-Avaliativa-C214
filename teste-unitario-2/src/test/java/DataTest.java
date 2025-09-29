@@ -20,7 +20,7 @@ public class DataTest {
         dataSegundo = new Data(data2025_09_01_segundo);
     }
 
-    // ---------- TESTES CERTOS ----------
+    // ----------- TESTES CERTOS -----------
     @Test
     public void testDataAtualCerto() throws Exception {
         assertEquals(data2025_09_01.toString("yyyy-MM-dd'T'HH:mm:ss.SSS"), dataFixa.dataAtual());
@@ -86,7 +86,7 @@ public class DataTest {
         assertTrue(dataErrada.isDepoisDe(dataFixa));
     }
 
-    // ---------- TESTES ERRADOS ----------
+    // ----------- TESTES ERRADOS -----------
     @Test(expected = Exception.class)
     public void testDataAtualErrado() throws Exception {
         dataErrada.dataAtual();
