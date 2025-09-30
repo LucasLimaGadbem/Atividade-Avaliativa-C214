@@ -67,25 +67,25 @@ jobs:
         name: pacote-app
         path: teste-unitario-2/target/*.jar
   
-    notificacao:
-      needs: [testes, analise, build]
-      runs-on: ubuntu-latest
-      environment: ambiente
-      steps:
-        - uses: actions/checkout@v4
+  notificacao:
+    needs: [testes, analise, build]
+    runs-on: ubuntu-latest
+    environment: ambiente
+    steps:
+      - uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: "3.11"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
-        - name: Install dependencies
-          run: python -m pip install --upgrade pip
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip
 
-        - name: Notification
-          env:
-            SMTP_USER: ${{ secrets.SMTP_USER }}
-            SMTP_PASS: ${{ secrets.SMTP_PASS }}
-            MAIL_TO: ${{ secrets.MAIL_TO }}
-          run: python teste-unitario-2/src/main/java/notification.py
+      - name: Notification
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python teste-unitario-2/src/main/java/notification.py
 
