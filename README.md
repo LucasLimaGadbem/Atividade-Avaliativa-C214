@@ -1,2 +1,2 @@
 # Atividade-Avaliativa-C214
-Repositório para o trabalho de Github Actions de Engenharia de Software
+Repositório para o trabalho de Github Actions de Engenharia de Software.
